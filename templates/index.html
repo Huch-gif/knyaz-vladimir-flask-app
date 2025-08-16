@@ -1,0 +1,82 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Главная — Князь Владимир: Мультфильм о крещении Руси{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <!-- Главный заголовок -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-warning">🎬 Князь Владимир</h1>
+
+        <!-- Текущее время в стиле бейджа -->
+        <p class="text-muted">Текущее время:
+            <strong>
+                <span id="current-time" class="badge bg-dark text-white" style="font-size: 1.2rem; padding: 0.5em 1em;">
+                    Загрузка...
+                </span>
+            </strong>
+        </p>
+
+        <p class="lead fs-3">Мультфильм о крещении Руси</p>
+    </div>
+
+    <!-- Постер в карточке -->
+    <div class="d-flex justify-content-center mt-4">
+        <div class="card shadow-lg border-0" style="max-width: 420px;">
+            <img src="{{ url_for('static', filename='images/постер.jpg') }}"
+                 alt="Постер мультфильма «Князь Владимир»"
+                 class="card-img-top rounded"
+                 style="border-bottom: 2px solid rgba(255, 215, 0, 0.3);">
+            <div class="card-body">
+                <h5 class="card-title">Официальный постер</h5>
+                <p class="card-text">История, которая объединила Русь.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Описание -->
+    <section class="text-center px-4 mt-5">
+        <h2>О мультфильме</h2>
+        <p class="fs-5">
+            Яркий и трогательный анимационный фильм для всей семьи,
+            рассказывающий о великом повороте в истории Руси —
+            крещении князя Владимира и принятии христианства.
+        </p>
+        <p>
+            Подходит для детей, школьных занятий и семейного просмотра.
+            История, наполненная подвигами, выбором и верой.
+        </p>
+    </section>
+
+    <!-- Навигация -->
+    <section class="text-center my-5">
+        <h3 class="mb-4">Хочешь узнать больше?</h3>
+        <div class="btn-group gap-3" role="group">
+            <a href="{{ url_for('characters') }}" class="btn btn-warning px-4 py-2 fs-5 rounded-pill">
+                👥 Персонажи
+            </a>
+            <a href="{{ url_for('blog') }}" class="btn btn-outline-warning px-4 py-2 fs-5 rounded-pill">
+                📚 Блог
+            </a>
+            <a href="{{ url_for('contacts') }}" class="btn btn-outline-warning px-4 py-2 fs-5 rounded-pill">
+                📞 Контакты
+            </a>
+        </div>
+    </section>
+</div>
+
+<!-- Скрипт для динамического обновления времени -->
+<script>
+    function updateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('ru-RU');
+        document.getElementById('current-time').textContent = timeStr;
+    }
+
+    // Обновляем каждую секунду
+    setInterval(updateTime, 1000);
+    updateTime(); // Показываем время сразу
+</script>
+{% endblock %}

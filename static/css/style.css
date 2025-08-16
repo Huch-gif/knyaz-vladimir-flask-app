@@ -1,0 +1,197 @@
+/* === Глобальные стили === */
+body {
+    background-color: #1a1a2e; /* Глубокий тёмный фон */
+    color: #e0e0e0;            /* Светлый, но не резкий текст */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* === Контейнер — центрирование и отступы === */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* === Заголовки === */
+h1, h2, h3 {
+    color: #FFD700; /* Золотисто-жёлтый цвет — как корона князя */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin: 50px 0 30px 0;
+    color: #FFEC40;
+}
+
+.lead {
+    font-size: 1.3rem;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* === Текущее время — выделение жирным и цветом === */
+strong {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* === Карточки персонажей — единый стиль === */
+.card {
+    background-color: rgba(255, 255, 255, 0.08); /* Прозрачный фон */
+    border: 1px solid rgba(255, 215, 0, 0.2);   /* Лёгкая золотая рамка */
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%; /* Все карточки одинаковой высоты */
+    backdrop-filter: blur(4px); /* Эффект полупрозрачности */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект при наведении на карточку */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 30px rgba(255, 215, 0, 0.25);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+/* Изображения в карточках — фиксированная высота и обрезка */
+.card-img-top {
+    height: 250px;              /* Фиксированная высота */
+    object-fit: cover;          /* Обрезка без растяжения */
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Увеличение изображения при наведении */
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Текст внутри карточки */
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #FFD700;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #bbbbbb;
+    margin-top: 8px;
+}
+
+/* === Анимация появления страницы === */
+.container {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Стили для изображений (вне карточек) === */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* === Адаптивность — мобильные устройства === */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+/* === Мелкие экраны (телефоны) === */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* === Кнопки (если будешь добавлять) === */
+.btn-warning {
+    background-color: #FFD700;
+    border: none;
+    color: #1a1a2e;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #FFC107;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* === Убираем лишние тени у текста в карточках === */
+.card-title,
+.card-text {
+    text-shadow: none;
+}

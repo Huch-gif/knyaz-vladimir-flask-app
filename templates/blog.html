@@ -1,0 +1,25 @@
+<!-- templates/blog.html -->
+{% extends "base.html" %}
+
+{% block title %}Блог — Князь Владимир{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">📰 Блог</h1>
+    <p class="text-center text-muted">Текущее время: <strong>{{ current_time }}</strong></p>
+
+    <div class="card mx-auto p-3 mb-3" style="max-width: 700px;">
+        <h5>Крещение Руси: как это было</h5>
+        <p>В 988 году князь Владимир принял христианство в Херсонесе и крестил Киев на Днепре...</p>
+    </div>
+
+    <div class="card mx-auto p-3 mb-3" style="max-width: 700px;">
+        <h5>Создание мультфильма</h5>
+        <p>Над анимацией работали 2 года. Использованы древнерусские узоры и исторические реконструкции...</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-warning">← На главную</a>
+    </div>
+</div>
+{% endblock %}

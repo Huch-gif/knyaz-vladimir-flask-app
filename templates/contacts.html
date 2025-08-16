@@ -1,0 +1,22 @@
+<!-- templates/contacts.html -->
+{% extends "base.html" %}
+
+{% block title %}Контакты — Князь Владимир{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">📞 Контакты</h1>
+    <p class="text-center text-muted">Текущее время: <strong>{{ current_time }}</strong></p>
+
+    <address class="text-center fs-5 mt-4">
+        📧 Email: <a href="mailto:info@knyazvladimir.ru">info@knyazvladimir.ru</a><br>
+        📞 Телефон: +7 (999) 123-45-67<br>
+        🏢 Киностудия "Древняя Русь"<br>
+        📍 г. Киев, ул. Владимирская, 1
+    </address>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-warning">← На главную</a>
+    </div>
+</div>
+{% endblock %}

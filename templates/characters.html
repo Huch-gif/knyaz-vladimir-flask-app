@@ -1,0 +1,91 @@
+<!-- templates/characters.html -->
+{% extends "base.html" %}
+
+{% block title %}Персонажи — Князь Владимир{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">👥 Главные герои</h1>
+    <p class="text-center text-muted">Текущее время: <strong>{{ current_time }}</strong></p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+        <!-- Князь Владимир -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Князь Владимир.jpg') }}"
+                     class="card-img-top" alt="Князь Владимир">
+                <div class="card-body">
+                    <h5 class="card-title">Князь Владимир</h5>
+                    <p class="card-text">Правитель, креститель Руси, искатель истины.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Анна Византийская -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Анна Византийская.jpg') }}"
+                     class="card-img-top" alt="Анна Византийская">
+                <div class="card-body">
+                    <h5 class="card-title">Анна Византийская</h5>
+                    <p class="card-text">Сестра императора, ставшая женой князя.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Олаф Рыжий -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Олаф Рыжий.jpg') }}"
+                     class="card-img-top" alt="Олаф Рыжий">
+                <div class="card-body">
+                    <h5 class="card-title">Олаф Рыжий</h5>
+                    <p class="card-text">Верный воин из дружины князя.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боян-лесник -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Боян-лесник и ведун.jpg') }}"
+                     class="card-img-top" alt="Боян">
+                <div class="card-body">
+                    <h5 class="card-title">Боян-лесник</h5>
+                    <p class="card-text">Мудрый ведун и певец, хранитель древних знаний.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Алекша -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Алекша.jpg') }}"
+                     class="card-img-top" alt="Алекша">
+                <div class="card-body">
+                    <h5 class="card-title">Алекша</h5>
+                    <p class="card-text">Молодой воин, ученик князя, символ будущего Руси.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кривжа -->
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="{{ url_for('static', filename='images/Кривжа.jpg') }}"
+                     class="card-img-top" alt="Кривжа">
+                <div class="card-body">
+                    <h5 class="card-title">Кривжа</h5>
+                    <p class="card-text">Хитрый волхв, противник христианства.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-warning px-4 py-2 rounded-pill">
+            ← На главную
+        </a>
+    </div>
+</div>
+{% endblock %}
