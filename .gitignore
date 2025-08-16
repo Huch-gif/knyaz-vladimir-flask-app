@@ -1,0 +1,15 @@
+# Виртуальное окружение
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Логи
+*.log
+
+# ОС
+.DS_Store
+Thumbs.db
