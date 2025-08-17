@@ -14,8 +14,49 @@
     <!-- Подключаем favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
-<body class="bg-dark text-light">
-    <!-- Основное содержимое будет вставлено сюда -->
-    {% block content %}{% endblock %}
+<body class="bg-dark text-light d-flex flex-column min-vh-100">
+    <!-- Основное содержимое -->
+    <main class="flex-grow-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Футер сайта (подвал) -->
+    <footer class="footer bg-secondary text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <!-- Название проекта -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Князь Владимир — мультфильм</h5>
+                    <p class="small">Анимационный проект о великом князе Руси</p>
+                </div>
+
+                <!-- Навигация -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6>Навигация</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="{{ url_for('index') }}" class="text-white text-decoration-none">Главная</a></li>
+                        <li><a href="{{ url_for('characters') }}" class="text-white text-decoration-none">Персонажи</a></li>
+                        <li><a href="{{ url_for('blog') }}" class="text-white text-decoration-none">Блог</a></li>
+                        <li><a href="{{ url_for('contacts') }}" class="text-white text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div class="col-md-4">
+                    <h6>Связь с нами</h6>
+                    <ul class="list-unstyled small">
+                        <li>Почта: <a href="mailto:info@vladimir-movie.ru" class="text-white text-decoration-none">info@vladimir-movie.ru</a></li>
+                        <li>Телефон: +7 (495) 123-45-67</li>
+                        <li>&copy; 2025 Все права защищены</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключаем Bootstrap JS (опционально, если нужен JS функционал) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

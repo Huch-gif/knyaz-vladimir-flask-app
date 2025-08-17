@@ -1,0 +1,31 @@
+<!-- templates/about.html -->
+{% extends "shablon.html" %}
+
+{% block title %}О нас — Мой сайт{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center text-warning">ℹ️ О нас</h1>
+    <p class="text-center lead">Узнайте больше о нашем проекте.</p>
+
+    <div class="card bg-light text-dark mx-auto shadow" style="max-width: 600px;">
+        <div class="card-body">
+            <h5 class="card-title">Наша миссия</h5>
+            <p class="card-text">
+                Мы создаём качественные веб-проекты, которые объединяют технологии, дизайн и историю.
+                Этот сайт — пример использования шаблонов Jinja2 в Flask.
+            </p>
+            <h5 class="card-title">Команда</h5>
+            <p class="card-text">
+                Разработчик: Алексей<br>
+                Дизайнер: Марина<br>
+                Историк: Дмитрий
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('home') }}" class="btn btn-outline-warning">← На главную</a>
+    </div>
+</div>
+{% endblock %}

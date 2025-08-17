@@ -1,15 +1,26 @@
-# Виртуальное окружение
-.venv/
-venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pyc
+.python-version
 
-# PyCharm
-.idea/
+# Виртуальное окружение
+venv/
+env/
+.venv/
+ENV/
 
 # Логи
 *.log
 
-# ОС
+# IDE
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+
+# Локальные файлы
+.env
+*.env

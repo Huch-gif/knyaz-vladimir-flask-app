@@ -1,0 +1,26 @@
+<!-- templates/home.html -->
+{% extends "shablon.html" %}
+
+{% block title %}Главная — Мой сайт{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center text-warning">🏠 Добро пожаловать!</h1>
+    <p class="text-center lead">
+        Это главная страница нашего сайта.
+    </p>
+
+    <div class="row mt-5">
+        <div class="col-md-6 mx-auto text-center">
+            <img src="{{ url_for('static', filename='images/home.jpg') }}"
+                 alt="Главная"
+                 class="img-fluid rounded shadow">
+            <p class="mt-3 text-muted">Место, где всё начинается.</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('about') }}" class="btn btn-warning btn-lg">Перейти к "О нас"</a>
+    </div>
+</div>
+{% endblock %}
